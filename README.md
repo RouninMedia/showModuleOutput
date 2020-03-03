@@ -14,12 +14,14 @@ This PHP tool shows the initial output of Ashiva Modules before Ashiva Module Co
     $Module_Output = $requiredMod(...$requiredModParameters);
     $Module_Output = json_decode($Module_Output, TRUE);
     $Module_Output = json_encode($Module_Output, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-
+    
+    echo '<pre>';
     echo '<h2>Module Output from '.$Module_Name.' by '.$Module_Publisher.' (as JSON)</h2>';
     echo $Module_Output;
 
     echo '<h2>Module Output from '.$Module_Name.' by '.$Module_Publisher.' (as PHP Array)</h2>';
     print_r(json_decode($Module_Output, TRUE));
+    echo '</pre>';
   }
 
 ```
