@@ -45,11 +45,13 @@ Example of Query String: ?module=Ashiva_Test_Module&publisher=Ashiva_Core
     $Module_Output = json_decode($Module_Output, TRUE);
     $Module_Output = json_encode($Module_Output, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
+    echo '<pre>';
     echo '<h2>Module Output from '.$Module_Name.' by '.$Module_Publisher.' (as JSON)</h2>';
     echo $Module_Output;
 
     echo '<h2>Module Output from '.$Module_Name.' by '.$Module_Publisher.' (as PHP Array)</h2>';
     print_r(json_decode($Module_Output, TRUE));
+    echo '</pre>';
   }
 
 
@@ -57,8 +59,6 @@ Example of Query String: ?module=Ashiva_Test_Module&publisher=Ashiva_Core
   //******************************//
  // DISPLAY ASHIVA MODULE OUTPUT //
 //******************************//
-
-  echo '<pre>';
 
   if ((!isset($_GET['module'])) || (!isset($_GET['publisher']))) {
 
@@ -70,7 +70,5 @@ Example of Query String: ?module=Ashiva_Test_Module&publisher=Ashiva_Core
     
     Show_Module_Output($_GET['module'], $_GET['publisher']);
   }
-  
-  echo '</pre>';
 
 ?>
