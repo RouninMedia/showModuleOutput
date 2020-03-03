@@ -62,6 +62,7 @@ Example of Query String: ?module=Ashiva_Test_Module&publisher=Ashiva_Core
 
   if ((!isset($_GET['module'])) || (!isset($_GET['publisher']))) {
 
+    echo '<h1>⚠️ Ashiva Console:</h1>';
     echo '<p><strong>URL Query String</strong> must contain both <strong>Ashiva Module Name</strong> <em>and</em> <strong>Ashiva Module Publisher</strong><br />
     <strong>e.g.:</strong> <a href="?module=Ashiva_Test_Module&publisher=Ashiva_Core"><em>?module=Ashiva_Test_Module&publisher=Ashiva_Core</em></a></p>';
   }
